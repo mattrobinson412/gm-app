@@ -80,3 +80,5 @@ router.get("/:name", ensureLoggedIn, async function (req, res, next) {
         return next(err);
     }
 })
+
+module.exports = router;

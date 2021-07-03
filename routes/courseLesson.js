@@ -8,7 +8,7 @@ const express = require("express");
 const { BadRequestError } = require("../expressError");
 const { ensureAdmin, ensureLoggedIn } = require("../middleware/auth");
 const CourseLesson = require("../models/courselesson");
-const courseLessonNewSchema = require("../schemas/courseLessonNewSchema.json");
+const courseLessonNewSchema = require("../schemas/courseLessonNew.json");
 const courseLessonUpdateSchema = require("../schemas/courseLessonUpdate.json");
 
 const router = express.Router({ mergeParams: true });
@@ -80,3 +80,5 @@ router.patch("/", ensureLoggedIn, async function (req, res, next) {
         return next(err);
     }
 })
+
+module.exports = router;
