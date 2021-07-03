@@ -17,7 +17,7 @@ class Contact {
 
     static async create(data) {
         const res = await db.query(
-            `INSERT INTO Contact (
+            `INSERT INTO "Contact" (
                 first_name,
                 last_name,
                 email,
@@ -48,7 +48,7 @@ class Contact {
             email,
             message,
             isHandled
-            FROM Contact 
+            FROM "Contact" 
             ORDER BY lastName`,
         );
 
@@ -66,7 +66,7 @@ class Contact {
             email,
             message,
             is_handled AS "isHandled"
-            FROM Contact
+            FROM "Contact"
             WHERE email = $1`,
             [email],
         );
@@ -92,7 +92,7 @@ class Contact {
             });
         const emailVarIdx = "$" + (values.length + 1);
 
-        const querySql = `UPDATE Contact
+        const querySql = `UPDATE "Contact"
                             SET ${setCols}
                             WHERE email = ${email}
                             RETURNING first_name AS "firstName",
@@ -114,7 +114,7 @@ class Contact {
     static async remove(email) {
         let res = await db.query(
             `DELETE 
-             FROM Contact
+             FROM "Contact"
              WHERE email = $1
              RETURNING email`,
              [email],

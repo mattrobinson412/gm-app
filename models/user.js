@@ -29,7 +29,7 @@ class User {
               last_name AS "lastName",
               email,
               is_admin AS "isAdmin"
-        FROM User
+        FROM "User"
         WHERE username = $1`,
         [username],
     );
@@ -59,7 +59,7 @@ class User {
     { username, password, firstName, lastName, email, isAdmin }) {
       const dupeCheck = await db.query(
         `SELECT username
-         FROM User
+         FROM "User"
          WHERE username = $1`,
          [username],
       );
@@ -71,7 +71,7 @@ class User {
       const hashedPassword = await bcrypt.hash(password, BCRYPT_WORK_FACTOR);
 
       const res = await db.query(
-        `INSERT INTO User
+        `INSERT INTO "User"
           (username,
            password,
            first_name,
@@ -107,7 +107,7 @@ class User {
                 last_name AS "lastName",
                 email,
                 is_admin AS "isAdmin"
-            FROM User
+            FROM "User"
             ORDER BY username`,
     );
 
@@ -130,7 +130,7 @@ class User {
               last_name AS "lastName",
               email,
               is_admin AS "isAdmin"
-          FROM User
+          FROM "User"
           WHERE username = $1`,
         [username],
     );
@@ -171,7 +171,7 @@ class User {
       });
     const usernameVarIdx = "$" + (values.length + 1);
 
-    const querySql = `UPDATE User
+    const querySql = `UPDATE "User"
                       SET ${setCols}
                       WHERE username = ${usernameVarIdx}
                       RETURNING username,
@@ -194,7 +194,7 @@ class User {
   static async remove(username) {
     let res = await db.query(
       `DELETE
-       FROM User
+       FROM "User"
        WHERE username = $1
        RETURNING username`,
       [username],

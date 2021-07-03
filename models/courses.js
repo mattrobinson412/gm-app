@@ -17,7 +17,7 @@ class Course {
 
     static async create(data) {
         const res = await db.query(
-            `INSERT INTO Course (name, level)
+            `INSERT INTO "Course" (name, level)
             VALUES ($1, $2)
             RETURNING id, name, level`,
             [data.name, data.level]);
@@ -33,7 +33,7 @@ class Course {
     static async getAll() {
         const res = await db.query(
             `SELECT id, name, level
-            FROM Course
+            FROM "Course"
             ORDER BY name DESC`,
         );
 
@@ -43,7 +43,7 @@ class Course {
     static async getCourse(name) {
         const res = await db.query(
             `SELECT id, name, level
-            FROM Course
+            FROM "Course"
             WHERE name = $1`,
             [name],
         );
@@ -65,7 +65,7 @@ class Course {
             });
         const nameVarIdx = "$" + (values.length + 1);
 
-        const querySql = `UPDATE Course
+        const querySql = `UPDATE "Course"
                          SET ${setCols}
                          WHERE name = ${name}
                          RETURNING name`;
@@ -85,7 +85,7 @@ class Course {
     static async remove(name) {
         let res = await db.query(
             `DELETE
-             FROM Course
+             FROM "Course"
              WHERE name = $1
              RETURNING name`,
              [name],

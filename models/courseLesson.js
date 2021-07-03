@@ -16,7 +16,7 @@ class CourseLesson {
 
     static async create(data) {
         const res = await db.query(
-            `INSERT INTO Course_Lesson (user_id, course_id,
+            `INSERT INTO "Course_Lesson" (user_id, course_id,
              lesson_id, is_completed)
              VALUES ($1, $2, $3, $4)
              RETURNING id, user_id AS "userId", course_id AS "courseId", lesson_id AS "lessonId", is_completed AS "isCompleted"`,
@@ -35,7 +35,7 @@ class CourseLesson {
         const res = await db.query(
             `SELECT course_id AS "courseId",
             lesson_id AS "lessonId"
-            FROM Course_Lesson 
+            FROM "Course_Lesson" 
             WHERE course_id = $1`,
             [courseId]);
 
@@ -50,7 +50,7 @@ class CourseLesson {
         const res = await db.query(
             `SELECT user_id AS "userId",
             course_id AS "courseId"
-            FROM Course_Lesson
+            FROM "Course_Lesson"
             WHERE user_id = $1 AND course_id = $2 AND is_completed = $3`,
             [data.userId, data.courseId, data.isCompleted]);
         
@@ -63,7 +63,7 @@ class CourseLesson {
 
     static async markComplete(data) {
         const res = await db.query(
-            `UPDATE course_lesson
+            `UPDATE "Course_Lesson"
                 SET is_completed
                 WHERE user_id = $1 AND course_id = $2 AND lesson_id = $3
                 RETURNING id,
@@ -89,7 +89,7 @@ class CourseLesson {
     static async remove(data) {
         let res = await db.query(
             `DELETE
-            FROM Course_Lesson
+            FROM "Course_Lesson"
             WHERE user_id = $1 AND course_id = $2 AND lesson_id = $3`, 
             [data.userId, data.courseId, data.lessonId]);
         const cl = res.rows[0];

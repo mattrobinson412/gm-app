@@ -17,7 +17,7 @@ class Lesson {
 
     static async create(data) {
         const res = await db.query(
-            `INSERT INTO Lesson (
+            `INSERT INTO "Lesson" (
                 course_id
                 name,
                 number,
@@ -48,7 +48,7 @@ class Lesson {
                     number,
                     sheet,
                     sound
-            FROM Lesson
+            FROM "Lesson"
             WHERE course_id = $1
             ORDER BY number DESC`,
             [courseId]);
@@ -67,7 +67,7 @@ class Lesson {
                     number,
                     sheet,
                     sound
-            FROM Lesson
+            FROM "Lesson"
             WHERE course_id = $1 AND number = $2`,
             [courseId, number],
         );
@@ -92,7 +92,7 @@ class Lesson {
             });
         const nameVarIdx = "$" + (values.length + 1);
 
-        const querySql = `UPDATE Lesson
+        const querySql = `UPDATE "Lesson"
                           SET ${setCols}
                           WHERE number = ${number} AND course_id = ${courseId}
                           RETURNING course_id AS "courseId",
@@ -116,7 +116,7 @@ class Lesson {
     static async remove(namnumbere, courseId) {
         let res = await db.query(
             `DELETE
-            FROM Lesson
+            FROM "Lesson"
             WHERE number = $1 AND course_id = $2,
             RETURNING name, course_id AS "courseId"`,
             [number, courseId],
