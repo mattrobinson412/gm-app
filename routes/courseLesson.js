@@ -7,7 +7,7 @@ const jsonschema = require("jsonschema");
 const express = require("express");
 const { BadRequestError } = require("../expressError");
 const { ensureAdmin, ensureLoggedIn } = require("../middleware/auth");
-const CourseLesson = require("../models/courselesson");
+const CourseLesson = require("../models/courseLesson");
 const courseLessonNewSchema = require("../schemas/courseLessonNew.json");
 const courseLessonUpdateSchema = require("../schemas/courseLessonUpdate.json");
 
