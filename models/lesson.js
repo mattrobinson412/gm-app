@@ -5,7 +5,7 @@ const { NotFoundError} = require("../expressError");
 const { sqlForPartialUpdate } = require("../helpers/sql");
 
 
-/** Related functions for courses. */
+/** Related functions for lessons. */
 
 class Lesson {
     /** Create a new lesson (from data), update db, return new course data.
@@ -80,7 +80,7 @@ class Lesson {
      * 
      */
 
-    static async update(name, courseId, data) {
+    static async update(number, courseId, data) {
         const { setCols, values } = sqlForPartialUpdate(
             data,
             {
@@ -94,17 +94,17 @@ class Lesson {
 
         const querySql = `UPDATE Lesson
                           SET ${setCols}
-                          WHERE name = ${name} AND course_id = ${courseId}
+                          WHERE number = ${number} AND course_id = ${courseId}
                           RETURNING course_id AS "courseId",
                           name,
                           number,
                           sheet,
                           sound`;
         
-        const res = await db.query(querySql, [...values, name, courseId]);
+        const res = await db.query(querySql, [...values, number, courseId]);
         const lesson = res.rows[0];
 
-        if (!lesson) throw new NotFoundError(`No lesson ${name}`);
+        if (!lesson) throw new NotFoundError(`No lesson ${number}`);
 
         return lesson;
     }
@@ -113,18 +113,20 @@ class Lesson {
      * 
      */
 
-    static async remove(name, courseId) {
+    static async remove(namnumbere, courseId) {
         let res = await db.query(
             `DELETE
             FROM Lesson
-            WHERE name = $1 AND course_id = $2,
+            WHERE number = $1 AND course_id = $2,
             RETURNING name, course_id AS "courseId"`,
-            [name, courseId],
+            [number, courseId],
         );
         const lesson = res.rows[0];
 
-        if (!lesson) throw new NotFoundError(`No lesson ${name} found in course ${courseId}`);
+        if (!lesson) throw new NotFoundError(`No lesson ${number} found in course ${courseId}`);
 
         return lesson;
     }
 }
+
+module.exports = Lesson;

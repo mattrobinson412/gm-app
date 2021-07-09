@@ -5,7 +5,7 @@
 const jsonschema = require("jsonschema");
 
 const express = require("express");
-const { ensureCorrectUserOrAdmin, ensureAdmin } = require("../middleware/auth");
+const { ensureCorrectUserOrAdmin, ensureAdmin, ensureLoggedIn } = require("../middleware/auth");
 const { BadRequestError } = require("../expressError");
 const Course = require("../models/courses");
 const { createToken } = require("../helpers/tokens");
@@ -35,6 +35,47 @@ router.post("/", ensureAdmin, async function (req, res, next) {
         const course = await Course.create(req.body);
         return res.status(201).json({ course });
         
+    } catch (err) {
+        return next(err);
+    }
+});
+
+
+/** GET / { courses }
+ * 
+ * Gets all courses.
+ * 
+ * Returns every course:
+ *  { id, name, level }, ...
+ * 
+ * auth req: login
+ */
+
+router.get("/", ensureLoggedIn, async function (req, res, next) {
+    try {
+        const courses = await Course.getAll();
+        return res.status(200).json({ courses });
+
+    } catch (err) {
+        return next(err);
+    }
+});
+
+/** GET /[name] => { course }
+ * 
+ * Gets a specific course.
+ * 
+ * Returns a course:
+ *  { id, name, level }
+ * 
+ * auth req: login
+ */
+
+router.get("/:name", ensureLoggedIn, async function (req, res, next) {
+    try {
+        const course = await Course.getCourse(req.params.name);
+        return res.status(200).json({ course });
+
     } catch (err) {
         return next(err);
     }
