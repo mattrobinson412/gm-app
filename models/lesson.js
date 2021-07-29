@@ -113,7 +113,7 @@ class Lesson {
      * 
      */
 
-    static async remove(namnumbere, courseId) {
+    static async remove(number, courseId) {
         let res = await db.query(
             `DELETE
             FROM "Lesson"

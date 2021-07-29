@@ -56,62 +56,63 @@ INSERT INTO "Course" (name, level) VALUES ('scelerisque', 2);
 
 -- LESSON table --
 CREATE TABLE "Lesson" (
-	id SERIAL PRIMARY KEcourse_id INT,
+	id SERIAL PRIMARY KEY,
+	course_id INT,
 	name TEXT,
 	number INT,
-	stanza VARCHAR(1000),
+	sheet VARCHAR(1000),
 	sound VARCHAR(1000)
 );
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (1, 4, 'lectus', 1, 'http://marketwatch.com/primis/in/faucibus.jpg', 'https://pen.io/vel/accumsan/tellus/nisi/eu.jsp');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES 1, 'cursus', 1, 'https://cnn.com/massa/id/nisl/venenatis.jpg', 'https://bbc.co.uk/tristique/fusce/congue/diam.jpg');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES 3, 'justo', 7, 'https://nyu.edu/vestibulum/sagittis.json', 'http://craigslist.org/nullam/orci/pede/venenatis/non/sodales/sed.js');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES 3, 'amet', 2, 'https://nih.gov/eleifend/quam/a/odio/in.jpg', 'https://foxnews.com/in.xml');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES 1, 'nulla', 9, 'http://multiply.com/integer/pede/justo/lacinia/eget/tincidunt/eget.jpg', 'http://goo.gl/est/phasellus/sit/amet/erat.jsp');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES 4, 'morbi', 10, 'https://jimdo.com/auctor/sed.aspx', 'http://meetup.com/bibendum/imperdiet/nullam/orci/pede/venenatis/non.jpg');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES 1, 'at', 5, 'http://weather.com/sem/fusce/consequat/nulla/nisl/nunc/nisl.html', 'http://google.com.br/enim.json');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES 5, 'at', 1, 'https://webeden.co.uk/luctus/et/ultrices.png', 'https://businesswire.com/volutpat/in/congue/etiam/justo.jpg');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES 5, 'ipsum', 5, 'http://webmd.com/elementum/nullam/varius/nulla/facilisi/cras.jpg', 'http://aol.com/eleifend/donec/ut.aspx');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (1, 'quis', 6, 'https://weebly.com/consequat/ut/nulla/sed/accumsan.aspx', 'https://webmd.com/dapibus/duis/at.json');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (5, 'suspendisse', 10, 'https://examiner.com/congue/diam/id.js', 'http://last.fm/erat/nulla/tempus/vivamus/in/felis/eu.jpg');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (3, 'morbi', 2, 'https://businessinsider.com/ante.aspx', 'http://people.com.cn/sit/amet/justo.jsp');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (1, 'sapien', 9, 'http://seesaa.net/amet/erat/nulla/tempus/vivamus.xml', 'http://cnbc.com/luctus/et.jsp');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (5, 'magna', 10, 'https://about.me/malesuada/in/imperdiet/et/commodo/vulputate.xml', 'http://posterous.com/massa/donec/dapibus/duis/at/velit.jsp');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (2, 'erat', 10, 'http://statcounter.com/eget/nunc.png', 'https://angelfire.com/odio/donec/vitae.jsp');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (4, 'ut', 3, 'http://slate.com/auctor/gravida/sem/praesent/id/massa/id.html', 'http://state.gov/vestibulum.js');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (4, 'cras', 3, 'http://t.co/nulla/pede/ullamcorper/augue/a/suscipit/nulla.aspx', 'https://reference.com/in/felis.js');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (3, 'hac', 7, 'http://gov.uk/volutpat/in/congue/etiam/justo.aspx', 'http://noaa.gov/vitae/ipsum/aliquam/non/mauris/morbi/non.json');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (1, 'morbi', 6, 'http://adobe.com/ac/consequat/metus/sapien/ut/nunc.jpg', 'https://nydailynews.com/orci/eget/orci/vehicula.aspx');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (5, 'turpis', 3, 'https://seesaa.net/volutpat/quam/pede/lobortis/ligula/sit.json', 'https://shutterfly.com/eu/orci/mauris/lacinia/sapien/quis/libero.xml');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (3, 'natoque', 1, 'http://elpais.com/cursus/urna/ut/tellus.png', 'https://pbs.org/ipsum/primis/in/faucibus/orci/luctus.json');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (3, 'in', 5, 'https://ebay.com/mattis/egestas/metus/aenean/fermentum/donec.jpg', 'http://geocities.com/vel.html');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (1, 'sit', 7, 'http://delicious.com/vestibulum/velit/id/pretium/iaculis/diam/erat.html', 'http://smugmug.com/habitasse/platea/dictumst.jpg');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (2, 'cursus', 2, 'https://imdb.com/non/mi/integer/ac/neque/duis.jsp', 'https://miitbeian.gov.cn/nisl/nunc/nisl/duis/bibendum.png');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (4, 'sapien', 10, 'http://geocities.com/eu/massa.jpg', 'http://reddit.com/sapien/a.jsp');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (4, 'vestibulum', 1, 'http://wufoo.com/ligula/in/lacus.html', 'https://ibm.com/sodales.json');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (4, 'metus', 9, 'http://wunderground.com/ultrices/libero/non/mattis/pulvinar/nulla.json', 'http://mapquest.com/cubilia/curae/donec/pharetra/magna/vestibulum.jpg');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (1, 'nibh', 5, 'https://merriam-webster.com/aliquam/non/mauris/morbi/non/lectus/aliquam.html', 'http://networksolutions.com/vel/ipsum.xml');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (3, 'odio', 6, 'https://instagram.com/aliquam/quis/turpis.jpg', 'https://yelp.com/sit/amet/nulla.jpg');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (3, 'in', 9, 'https://addthis.com/nibh/in/lectus/pellentesque/at/nulla/suspendisse.aspx', 'http://nydailynews.com/sed/ante/vivamus/tortor/duis.html');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (3, 'sit', 8, 'https://sun.com/justo/maecenas/rhoncus/aliquam/lacus.html', 'https://hp.com/non/velit.html');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (3, 'venenatis', 10, 'https://liveinternet.ru/id/massa.png', 'http://abc.net.au/ultrices/posuere/cubilia/curae.jpg');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (1, 'aliquet', 6, 'http://nymag.com/vulputate/elementum.jsp', 'https://wix.com/lacinia/erat/vestibulum/sed/magna.json');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (4, 'nam', 2, 'http://jigsy.com/venenatis/non/sodales/sed/tincidunt/eu.jsp', 'http://economist.com/ornare/imperdiet.png');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (1, 'quisque', 3, 'http://bizjournals.com/augue/vestibulum/ante/ipsum/primis/in.json', 'https://ihg.com/duis/ac/nibh/fusce/lacus/purus/aliquet.js');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (3, 'eleifend', 9, 'http://yellowbook.com/nisi/nam/ultrices.json', 'http://pbs.org/sociis/natoque/penatibus/et/magnis/dis/parturient.html');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (2, 'in', 5, 'http://hubpages.com/ut/dolor/morbi.js', 'http://usatoday.com/vulputate/nonummy/maecenas/tincidunt/lacus/at/velit.jpg');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (2, 'integer', 7, 'http://tripadvisor.com/turpis/elementum/ligula/vehicula/consequat.jpg', 'http://shinystat.com/nec/nisi.xml');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (4, 'sagittis', 6, 'http://flavors.me/adipiscing/elit/proin/risus/praesent.xml', 'http://tinyurl.com/ut/mauris/eget/massa/tempor.xml');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (2, 'donec', 7, 'http://shinystat.com/sed/interdum/venenatis.xml', 'https://washington.edu/placerat/praesent/blandit/nam/nulla.js');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (5, 'vulputate', 1, 'http://google.com/luctus/nec/molestie/sed/justo.png', 'https://wp.com/nisl/nunc/rhoncus/dui/vel.json');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (2, 'hendrerit', 4, 'http://spiegel.de/at/ipsum/ac/tellus/semper/interdum/mauris.aspx', 'https://nifty.com/natoque/penatibus/et.jsp');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (2, 'posuere', 4, 'http://wikispaces.com/magna/bibendum.aspx', 'https://yale.edu/consequat/in/consequat/ut.jpg');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (3, 'in', 8, 'http://wix.com/sapien/quis.js', 'https://github.io/proin/eu/mi.png');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (1, 'dictumst', 9, 'http://google.ca/at.html', 'http://diigo.com/tincidunt/eu/felis.html');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (4, 'platea', 6, 'http://va.gov/donec/ut/dolor/morbi/vel.aspx', 'http://uiuc.edu/lacus/purus/aliquet/at/feugiat/non.xml');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (1, 'faucibus', 9, 'https://prlog.org/quam/sapien/varius/ut/blandit.json', 'http://wikipedia.org/dolor/vel/est.aspx');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (5, 'luctus', 10, 'http://cafepress.com/diam/nam/tristique/tortor/eu/pede.json', 'https://globo.com/in/libero/ut.png');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (5, 'auctor', 3, 'http://google.cn/venenatis/turpis/enim.json', 'http://typepad.com/elit/sodales/scelerisque.png');
-INSERT INTO "Lesson" (course_id, name, number, stanza, sound) VALUES (4, 'viverra', 2, 'https://bloglines.com/purus/eu/magna/vulputate.html', 'https://epa.gov/nam/congue/risus/semper/porta.jpg');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (1, 4, 'lectus', 1, 'http://marketwatch.com/primis/in/faucibus.jpg', 'https://pen.io/vel/accumsan/tellus/nisi/eu.jsp');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES 1, 'cursus', 1, 'https://cnn.com/massa/id/nisl/venenatis.jpg', 'https://bbc.co.uk/tristique/fusce/congue/diam.jpg');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES 3, 'justo', 7, 'https://nyu.edu/vestibulum/sagittis.json', 'http://craigslist.org/nullam/orci/pede/venenatis/non/sodales/sed.js');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES 3, 'amet', 2, 'https://nih.gov/eleifend/quam/a/odio/in.jpg', 'https://foxnews.com/in.xml');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES 1, 'nulla', 9, 'http://multiply.com/integer/pede/justo/lacinia/eget/tincidunt/eget.jpg', 'http://goo.gl/est/phasellus/sit/amet/erat.jsp');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES 4, 'morbi', 10, 'https://jimdo.com/auctor/sed.aspx', 'http://meetup.com/bibendum/imperdiet/nullam/orci/pede/venenatis/non.jpg');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES 1, 'at', 5, 'http://weather.com/sem/fusce/consequat/nulla/nisl/nunc/nisl.html', 'http://google.com.br/enim.json');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES 5, 'at', 1, 'https://webeden.co.uk/luctus/et/ultrices.png', 'https://businesswire.com/volutpat/in/congue/etiam/justo.jpg');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES 5, 'ipsum', 5, 'http://webmd.com/elementum/nullam/varius/nulla/facilisi/cras.jpg', 'http://aol.com/eleifend/donec/ut.aspx');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (1, 'quis', 6, 'https://weebly.com/consequat/ut/nulla/sed/accumsan.aspx', 'https://webmd.com/dapibus/duis/at.json');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (5, 'suspendisse', 10, 'https://examiner.com/congue/diam/id.js', 'http://last.fm/erat/nulla/tempus/vivamus/in/felis/eu.jpg');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (3, 'morbi', 2, 'https://businessinsider.com/ante.aspx', 'http://people.com.cn/sit/amet/justo.jsp');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (1, 'sapien', 9, 'http://seesaa.net/amet/erat/nulla/tempus/vivamus.xml', 'http://cnbc.com/luctus/et.jsp');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (5, 'magna', 10, 'https://about.me/malesuada/in/imperdiet/et/commodo/vulputate.xml', 'http://posterous.com/massa/donec/dapibus/duis/at/velit.jsp');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (2, 'erat', 10, 'http://statcounter.com/eget/nunc.png', 'https://angelfire.com/odio/donec/vitae.jsp');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (4, 'ut', 3, 'http://slate.com/auctor/gravida/sem/praesent/id/massa/id.html', 'http://state.gov/vestibulum.js');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (4, 'cras', 3, 'http://t.co/nulla/pede/ullamcorper/augue/a/suscipit/nulla.aspx', 'https://reference.com/in/felis.js');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (3, 'hac', 7, 'http://gov.uk/volutpat/in/congue/etiam/justo.aspx', 'http://noaa.gov/vitae/ipsum/aliquam/non/mauris/morbi/non.json');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (1, 'morbi', 6, 'http://adobe.com/ac/consequat/metus/sapien/ut/nunc.jpg', 'https://nydailynews.com/orci/eget/orci/vehicula.aspx');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (5, 'turpis', 3, 'https://seesaa.net/volutpat/quam/pede/lobortis/ligula/sit.json', 'https://shutterfly.com/eu/orci/mauris/lacinia/sapien/quis/libero.xml');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (3, 'natoque', 1, 'http://elpais.com/cursus/urna/ut/tellus.png', 'https://pbs.org/ipsum/primis/in/faucibus/orci/luctus.json');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (3, 'in', 5, 'https://ebay.com/mattis/egestas/metus/aenean/fermentum/donec.jpg', 'http://geocities.com/vel.html');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (1, 'sit', 7, 'http://delicious.com/vestibulum/velit/id/pretium/iaculis/diam/erat.html', 'http://smugmug.com/habitasse/platea/dictumst.jpg');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (2, 'cursus', 2, 'https://imdb.com/non/mi/integer/ac/neque/duis.jsp', 'https://miitbeian.gov.cn/nisl/nunc/nisl/duis/bibendum.png');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (4, 'sapien', 10, 'http://geocities.com/eu/massa.jpg', 'http://reddit.com/sapien/a.jsp');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (4, 'vestibulum', 1, 'http://wufoo.com/ligula/in/lacus.html', 'https://ibm.com/sodales.json');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (4, 'metus', 9, 'http://wunderground.com/ultrices/libero/non/mattis/pulvinar/nulla.json', 'http://mapquest.com/cubilia/curae/donec/pharetra/magna/vestibulum.jpg');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (1, 'nibh', 5, 'https://merriam-webster.com/aliquam/non/mauris/morbi/non/lectus/aliquam.html', 'http://networksolutions.com/vel/ipsum.xml');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (3, 'odio', 6, 'https://instagram.com/aliquam/quis/turpis.jpg', 'https://yelp.com/sit/amet/nulla.jpg');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (3, 'in', 9, 'https://addthis.com/nibh/in/lectus/pellentesque/at/nulla/suspendisse.aspx', 'http://nydailynews.com/sed/ante/vivamus/tortor/duis.html');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (3, 'sit', 8, 'https://sun.com/justo/maecenas/rhoncus/aliquam/lacus.html', 'https://hp.com/non/velit.html');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (3, 'venenatis', 10, 'https://liveinternet.ru/id/massa.png', 'http://abc.net.au/ultrices/posuere/cubilia/curae.jpg');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (1, 'aliquet', 6, 'http://nymag.com/vulputate/elementum.jsp', 'https://wix.com/lacinia/erat/vestibulum/sed/magna.json');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (4, 'nam', 2, 'http://jigsy.com/venenatis/non/sodales/sed/tincidunt/eu.jsp', 'http://economist.com/ornare/imperdiet.png');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (1, 'quisque', 3, 'http://bizjournals.com/augue/vestibulum/ante/ipsum/primis/in.json', 'https://ihg.com/duis/ac/nibh/fusce/lacus/purus/aliquet.js');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (3, 'eleifend', 9, 'http://yellowbook.com/nisi/nam/ultrices.json', 'http://pbs.org/sociis/natoque/penatibus/et/magnis/dis/parturient.html');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (2, 'in', 5, 'http://hubpages.com/ut/dolor/morbi.js', 'http://usatoday.com/vulputate/nonummy/maecenas/tincidunt/lacus/at/velit.jpg');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (2, 'integer', 7, 'http://tripadvisor.com/turpis/elementum/ligula/vehicula/consequat.jpg', 'http://shinystat.com/nec/nisi.xml');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (4, 'sagittis', 6, 'http://flavors.me/adipiscing/elit/proin/risus/praesent.xml', 'http://tinyurl.com/ut/mauris/eget/massa/tempor.xml');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (2, 'donec', 7, 'http://shinystat.com/sed/interdum/venenatis.xml', 'https://washington.edu/placerat/praesent/blandit/nam/nulla.js');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (5, 'vulputate', 1, 'http://google.com/luctus/nec/molestie/sed/justo.png', 'https://wp.com/nisl/nunc/rhoncus/dui/vel.json');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (2, 'hendrerit', 4, 'http://spiegel.de/at/ipsum/ac/tellus/semper/interdum/mauris.aspx', 'https://nifty.com/natoque/penatibus/et.jsp');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (2, 'posuere', 4, 'http://wikispaces.com/magna/bibendum.aspx', 'https://yale.edu/consequat/in/consequat/ut.jpg');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (3, 'in', 8, 'http://wix.com/sapien/quis.js', 'https://github.io/proin/eu/mi.png');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (1, 'dictumst', 9, 'http://google.ca/at.html', 'http://diigo.com/tincidunt/eu/felis.html');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (4, 'platea', 6, 'http://va.gov/donec/ut/dolor/morbi/vel.aspx', 'http://uiuc.edu/lacus/purus/aliquet/at/feugiat/non.xml');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (1, 'faucibus', 9, 'https://prlog.org/quam/sapien/varius/ut/blandit.json', 'http://wikipedia.org/dolor/vel/est.aspx');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (5, 'luctus', 10, 'http://cafepress.com/diam/nam/tristique/tortor/eu/pede.json', 'https://globo.com/in/libero/ut.png');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (5, 'auctor', 3, 'http://google.cn/venenatis/turpis/enim.json', 'http://typepad.com/elit/sodales/scelerisque.png');
+INSERT INTO "Lesson" (course_id, name, number, sheet, sound) VALUES (4, 'viverra', 2, 'https://bloglines.com/purus/eu/magna/vulputate.html', 'https://epa.gov/nam/congue/risus/semper/porta.jpg');
 
 
 -- COURSE_LESSON table --

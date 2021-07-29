@@ -40,7 +40,7 @@ router.post("/", ensureAdmin, async function (req, res, next) {
     }
 });
 
-/** GET / all lessons
+/** GET / all lessons for a course
  * 
  * Returns all lessons:
  * { id, courseId, name, number, sheet, sound }, ...
@@ -48,9 +48,9 @@ router.post("/", ensureAdmin, async function (req, res, next) {
  * auth req: user
  */
 
-router.get("/", ensureLoggedIn, async function (req, res, next) {
+router.get("/:courseId", ensureLoggedIn, async function (req, res, next) {
     try {
-        const lessons = await Lesson.getAll();
+        const lessons = await Lesson.getAll(req.params.courseId);
         return res.status(200).json({ lessons });
 
     } catch (err) {
